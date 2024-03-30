@@ -2,12 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
-            steps {
-                git credentialsId: '54eb5b5f-b607-4b9f-88b1-011260c6419c', url: 'https://github.com/funke09/vuejs-beginner.git'
-            }
-        }
-        
         stage('Dockerize') {
             steps {
                 sh 'docker build -t vuejs-ci-cd .'
