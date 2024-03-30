@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vuejs-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vuejs-app
+  template:
+    metadata:
+      labels:
+        app: vuejs-app
+    spec:
+      containers:
+      - name: vuejs-app
+        image: funke09/vuejs-ci-cd:latest
+        ports:
+        - containerPort: 80
+
